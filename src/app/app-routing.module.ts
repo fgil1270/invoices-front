@@ -14,9 +14,30 @@ const routes: Routes = [
         children: [
             {
                 path: '',
+                redirectTo: '/auth/login',
+                pathMatch: 'full',
+            },
+            {
+                path: 'dashboard',
                 loadChildren: () =>
                     import('./demo/components/dashboard/dashboard.module').then(
                         (m) => m.DashboardModule
+                    ),
+            },
+            {
+                path: 'role',
+                data: { breadcrumb: 'Role' },
+                loadChildren: () =>
+                    import('./demo/components/role/role.module').then(
+                        (m) => m.RoleModule
+                    ),
+            },
+            {
+                path: 'employee',
+                data: { breadcrumb: 'Employee' },
+                loadChildren: () =>
+                    import('./demo/components/employee/employee.module').then(
+                        (m) => m.EmployeeModule
                     ),
             },
             {
@@ -60,14 +81,6 @@ const routes: Routes = [
                     ).then((m) => m.DocumentationModule),
             },
             {
-                path: 'blocks',
-                data: { breadcrumb: 'Prime Blocks' },
-                loadChildren: () =>
-                    import(
-                        './demo/components/primeblocks/primeblocks.module'
-                    ).then((m) => m.PrimeBlocksModule),
-            },
-            {
                 path: 'ecommerce',
                 data: { breadcrumb: 'E-Commerce' },
                 loadChildren: () =>
@@ -87,6 +100,7 @@ const routes: Routes = [
     },
     {
         path: 'auth',
+        //redirectTo: 'auth',
         data: { breadcrumb: 'Auth' },
         loadChildren: () =>
             import('./demo/components/auth/auth.module').then(

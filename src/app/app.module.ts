@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppLayoutModule } from './layout/app.layout.module';
 
+
 @NgModule({
     declarations: [
         AppComponent
@@ -16,5 +17,6 @@ import { AppLayoutModule } from './layout/app.layout.module';
         { provide: LocationStrategy, useClass: PathLocationStrategy },
     ],
     bootstrap: [AppComponent]
+    
 })
 export class AppModule { }

@@ -17,70 +17,84 @@ export class AppMenuComponent implements OnInit {
                     {
                         label: 'Dashboard',
                         icon: 'pi pi-fw pi-home',
-                        routerLink: ['/'],
+                        routerLink: ['/dashboard'],
                     },
                 ],
             },
             {
-                label: 'Configuration',
+                label: '',
                 icon: 'pi pi-fw pi-cog',
                 items: [
                     {
-                        label: 'Views',
-                        icon: 'pi pi-fw pi-eye',
-                        routerLink: ['/configuration/menu'],
+                        label: 'Configuration',
+                        icon: 'pi pi-fw pi-cog',
+                        items: [
+                            {
+                                label: 'Views',
+                                icon: 'pi pi-fw pi-eye',
+                                routerLink: ['/configuration/menu'],
+                            },
+                            {
+                                label: 'Roles',
+                                icon: 'pi pi-fw pi-sitemap',
+                                routerLink: ['/role'],
+                            },
+                            {
+                                label: 'Views-Roles',
+                                icon: 'pi pi-fw pi-share-alt',
+                                routerLink: ['/configuration/role'],
+                            },
+                            {
+                                label: 'Users',
+                                icon: 'pi pi-fw pi-users',
+                                routerLink: ['/configuration/permission'],
+                            }
+                        ]
                     },
-                    {
-                        label: 'Roles',
-                        icon: 'pi pi-fw pi-sitemap',
-                        routerLink: ['/configuration/user'],
-                    },
-                    {
-                        label: 'Views-Roles',
-                        icon: 'pi pi-fw pi-share-alt',
-                        routerLink: ['/configuration/role'],
-                    },
-                    {
-                        label: 'Users',
-                        icon: 'pi pi-fw pi-users',
-                        routerLink: ['/configuration/permission'],
-                    }
+                    
                 ]
             },
             {
-                label: 'Catalogues',
+                label: '',
                 icon: 'pi pi-fw pi-book',
                 items: [
                     {
-                        label: 'Suppliers',
-                        icon: 'pi pi-fw pi-users',
-                        routerLink: ['/catalogues/supplier']
+                        label: 'Catalogues',
+                        icon: 'pi pi-fw pi-book',
+                        items: [
+                            {
+                                label: 'Suppliers',
+                                icon: 'pi pi-fw pi-users',
+                                routerLink: ['/catalogues/supplier']
+                            },
+                            {
+                                label: 'Black List',
+                                icon: 'pi pi-fw pi-ban',
+                                routerLink: ['/catalogues/black-list']
+                            },
+                            {
+                                label: 'Employees',
+                                icon: 'pi pi-fw pi-users',
+                                routerLink: ['/employee']
+                            },
+                            {
+                                label: 'CC',
+                                icon: 'pi pi-fw pi-users',
+                                routerLink: ['/catalogues/cc']
+                            },
+                            {
+                                label: 'Banks',
+                                icon: 'pi pi-fw pi-users',
+                                routerLink: ['/catalogues/bank']
+                            },
+                            {
+                                label: 'Payment Terms',
+                                icon: 'pi pi-fw pi-users',
+                                routerLink: ['/catalogues/payment-term']
+                            }
+                        ]
                     },
-                    {
-                        label: 'Black List',
-                        icon: 'pi pi-fw pi-ban',
-                        routerLink: ['/catalogues/black-list']
-                    },
-                    {
-                        label: 'Employees',
-                        icon: 'pi pi-fw pi-users',
-                        routerLink: ['/catalogues/employee']
-                    },
-                    {
-                        label: 'CC',
-                        icon: 'pi pi-fw pi-users',
-                        routerLink: ['/catalogues/cc']
-                    },
-                    {
-                        label: 'Banks',
-                        icon: 'pi pi-fw pi-users',
-                        routerLink: ['/catalogues/bank']
-                    },
-                    {
-                        label: 'Payment Terms',
-                        icon: 'pi pi-fw pi-users',
-                        routerLink: ['/catalogues/payment-term']
-                    }
+                    
                 ]
             },
             {
@@ -88,20 +102,27 @@ export class AppMenuComponent implements OnInit {
                 icon: 'pi pi-fw pi-file',
                 items: [
                     {
-                        label: 'Foreign Invoices',
+                        label: 'Documents',
                         icon: 'pi pi-fw pi-file',
-                        routerLink: ['/documents/foreign-invoice']
+                        items: [
+                            {
+                                label: 'Foreign Invoices',
+                                icon: 'pi pi-fw pi-file',
+                                routerLink: ['/documents/foreign-invoice']
+                            },
+                            {
+                                label: 'Employee Expenses',
+                                icon: 'pi pi-fw pi-file',
+                                routerLink: ['/documents/invoice']
+                            },
+                            {
+                                label: 'Down Payments',
+                                icon: 'pi pi-fw pi-file',
+                                routerLink: ['/documents/credit-note']
+                            }
+                        ]
                     },
-                    {
-                        label: 'Employee Expenses',
-                        icon: 'pi pi-fw pi-file',
-                        routerLink: ['/documents/invoice']
-                    },
-                    {
-                        label: 'Down Payments',
-                        icon: 'pi pi-fw pi-file',
-                        routerLink: ['/documents/credit-note']
-                    }
+                    
                 ]
             },
             {
@@ -109,40 +130,47 @@ export class AppMenuComponent implements OnInit {
                 icon: 'pi pi-fw pi-file',
                 items: [
                     {
-                        label: 'Assign',
+                        label: 'Invoices',
                         icon: 'pi pi-fw pi-file',
-                        routerLink: ['/invoices/foreign-invoice']
+                        items: [
+                            {
+                                label: 'Assign',
+                                icon: 'pi pi-fw pi-file',
+                                routerLink: ['/invoices/foreign-invoice']
+                            },
+                            {
+                                label: 'User Release',
+                                icon: 'pi pi-fw pi-file',
+                                routerLink: ['/invoices/invoice']
+                            },
+                            {
+                                label: 'Purchasing',
+                                icon: 'pi pi-fw pi-file',
+                                routerLink: ['/invoices/credit-note']
+                            },
+                            {
+                                label: 'Accounting',
+                                icon: 'pi pi-fw pi-file',
+                                routerLink: ['/invoices/accounting']
+                            },
+                            {
+                                label: 'GM Release',
+                                icon: 'pi pi-fw pi-file',
+                                routerLink: ['/invoices/gm-release']
+                            },
+                            {
+                                label: 'Modify',
+                                icon: 'pi pi-fw pi-file',
+                                routerLink: ['/invoices/modify']
+                            },
+                            {
+                                label: 'Upload XML',
+                                icon: 'pi pi-fw pi-file',
+                                routerLink: ['/invoices/upload-xml']
+                            }
+                        ]
                     },
-                    {
-                        label: 'User Release',
-                        icon: 'pi pi-fw pi-file',
-                        routerLink: ['/invoices/invoice']
-                    },
-                    {
-                        label: 'Purchasing',
-                        icon: 'pi pi-fw pi-file',
-                        routerLink: ['/invoices/credit-note']
-                    },
-                    {
-                        label: 'Accounting',
-                        icon: 'pi pi-fw pi-file',
-                        routerLink: ['/invoices/accounting']
-                    },
-                    {
-                        label: 'GM Release',
-                        icon: 'pi pi-fw pi-file',
-                        routerLink: ['/invoices/gm-release']
-                    },
-                    {
-                        label: 'Modify',
-                        icon: 'pi pi-fw pi-file',
-                        routerLink: ['/invoices/modify']
-                    },
-                    {
-                        label: 'Upload XML',
-                        icon: 'pi pi-fw pi-file',
-                        routerLink: ['/invoices/upload-xml']
-                    }
+                    
                 ]
             },
             {
