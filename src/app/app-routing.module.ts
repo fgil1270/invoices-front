@@ -25,6 +25,14 @@ const routes: Routes = [
                     ),
             },
             {
+                path: 'view',
+                data: { breadcrumb: 'View' },
+                loadChildren: () =>
+                    import('./demo/components/view/view.module').then(
+                        (m) => m.ViewModule
+                    ),
+            },
+            {
                 path: 'role',
                 data: { breadcrumb: 'Role' },
                 loadChildren: () =>
@@ -33,11 +41,35 @@ const routes: Routes = [
                     ),
             },
             {
+                path: 'user',
+                data: { breadcrumb: 'Users' },
+                loadChildren: () =>
+                    import('./demo/components/user/user.module').then(
+                        (m) => m.UserModule
+                    ),
+            },
+            {
                 path: 'employee',
                 data: { breadcrumb: 'Employee' },
                 loadChildren: () =>
                     import('./demo/components/employee/employee.module').then(
                         (m) => m.EmployeeModule
+                    ),
+            },
+            {
+                path: 'invoice',
+                data: { breadcrumb: 'Invoice' },
+                loadChildren: () =>
+                    import('./demo/components/invoice/invoice.module').then(
+                        (m) => m.InvoiceModule
+                    ),
+            },
+            {
+                path: 'foreign-invoice',
+                data: { breadcrumb: 'Foreign Invoice' },
+                loadChildren: () =>
+                    import('./demo/components/factura-extranjera/factura-extranjera.module').then(
+                        (m) => m.FacturaExtranjeraModule
                     ),
             },
             {

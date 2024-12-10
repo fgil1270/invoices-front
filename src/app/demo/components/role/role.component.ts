@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Table } from 'primeng/table';
+
+import { RoleService } from '../../service/role.service';
 import { Customer, Representative } from 'src/app/demo/api/customer';
 import { CustomerService } from 'src/app/demo/service/customer.service';
 import { ProductService } from 'src/app/demo/service/product.service';
@@ -12,7 +14,7 @@ import { ProductService } from 'src/app/demo/service/product.service';
 export class RoleComponent implements OnInit {
   @ViewChild('filter') filter!: ElementRef;
 
-  customers1: Customer[] = [];
+  roles: any[] = [];
 
   loading: boolean = true;
 
@@ -22,16 +24,27 @@ export class RoleComponent implements OnInit {
 
   activityValues: number[] = [0, 100];
 
-  constructor(private customerService: CustomerService, private productService: ProductService) { }
+  constructor(
+    private customerService: CustomerService, 
+    private productService: ProductService,
+    private roleService: RoleService
+  ) { }
 
   ngOnInit() {
-    this.customerService.getCustomersLarge().then(customers => {
-      this.customers1 = customers;
-      this.loading = false;
+    this.roleService.getAllRole().subscribe({
+      next: (roles) => {
+        
+        this.roles = roles;
+        this.loading = false;
+      },
+      error: (errorMsg) => {
 
-      // @ts-ignore
-      this.customers1.forEach(customer => customer.date = new Date(customer.date));
-  });
+      }
+      
+      
+    });
+
+    
   /* this.customerService.getCustomersMedium().then(customers => this.customers2 = customers);
   this.customerService.getCustomersMedium().then(customers => this.customers3 = customers);
   this.customerService.getCustomersLarge().then(customers => this.customers4 = customers);
@@ -63,7 +76,7 @@ export class RoleComponent implements OnInit {
   
 
   onGlobalFilter(table: Table, event: Event) {
-    console.log((event.target as HTMLInputElement).value);
+    
     table.filterGlobal((event.target as HTMLInputElement).value, 'contains');
   }
 

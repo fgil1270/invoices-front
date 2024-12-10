@@ -1,9 +1,9 @@
 .layout-menu-dim {
-    --menu-bg: #3C4962;
+    --menu-bg: rgba(113, 119, 118, 0.6); //color de la empresa
     --menu-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.06);
-    --root-menuitem-text-color: #CDD2DB;
-    --menuitem-text-color: #E5E8EC;
-    --menuitem-hover-bg: #59667D;
+    --root-menuitem-text-color: #000000;
+    --menuitem-text-color: #000000;
+    --menuitem-hover-bg: rgba(243, 248, 246, 0.986);
     --active-menuitem-text-color: #ffffff;
-    --active-menuitem-bg: #495771;
+    --active-menuitem-bg: rgba(196, 201, 199, 0.377); //graylight color de la empresa 
 }

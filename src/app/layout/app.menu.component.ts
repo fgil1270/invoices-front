@@ -32,7 +32,7 @@ export class AppMenuComponent implements OnInit {
                             {
                                 label: 'Views',
                                 icon: 'pi pi-fw pi-eye',
-                                routerLink: ['/configuration/menu'],
+                                routerLink: ['/view'],
                             },
                             {
                                 label: 'Roles',
@@ -47,7 +47,7 @@ export class AppMenuComponent implements OnInit {
                             {
                                 label: 'Users',
                                 icon: 'pi pi-fw pi-users',
-                                routerLink: ['/configuration/permission'],
+                                routerLink: ['/user'],
                             }
                         ]
                     },
@@ -108,7 +108,7 @@ export class AppMenuComponent implements OnInit {
                             {
                                 label: 'Foreign Invoices',
                                 icon: 'pi pi-fw pi-file',
-                                routerLink: ['/documents/foreign-invoice']
+                                routerLink: ['/foreign-invoice']
                             },
                             {
                                 label: 'Employee Expenses',
@@ -136,7 +136,7 @@ export class AppMenuComponent implements OnInit {
                             {
                                 label: 'Assign',
                                 icon: 'pi pi-fw pi-file',
-                                routerLink: ['/invoices/foreign-invoice']
+                                routerLink: ['/invoice']
                             },
                             {
                                 label: 'User Release',

@@ -20,14 +20,18 @@
                     autocomplete="off"
                     pInputText
                     placeholder="User"
+                    [(ngModel)]="userName"
                     class="w-11 mb-4 text-bluegray-600 surface-ground "
+                    (keydown.enter)="login()"
                 />
                 <input
                     type="password"
                     autocomplete="off"
                     pInputText
                     placeholder="Password"
+                    [(ngModel)]="password"
                     class="w-11 mb-4 text-bluegray-600 surface-ground "
+                    (keydown.enter)="login()"
                 />
                 <button
                     pButton
@@ -37,6 +41,8 @@
                     class="w-11 "
                     (click)="login()"
                 ></button>
+
+                <p-messages [value]="msgs"></p-messages>
             </div>
 
             <p class="font-semibold m-0 text-bluegray-200">

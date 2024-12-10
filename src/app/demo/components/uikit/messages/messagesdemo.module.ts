@@ -14,8 +14,8 @@ import { InputTextModule } from 'primeng/inputtext';
 		MessagesDemoRoutingModule,
 		MessagesModule,
 		MessageModule,
-		ButtonModule,
 		ToastModule,
+		ButtonModule,
 		InputTextModule
 	],
 	declarations: [MessagesDemoComponent]

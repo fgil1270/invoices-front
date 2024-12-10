@@ -8,6 +8,7 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { FormsModule } from '@angular/forms';
 import { AppConfigModule } from 'src/app/layout/config/app.config.module';
 import { RippleModule } from 'primeng/ripple';
+import { MessagesModule } from 'primeng/messages';
 
 @NgModule({
     imports: [
@@ -18,7 +19,8 @@ import { RippleModule } from 'primeng/ripple';
         CheckboxModule,
         FormsModule,
         AppConfigModule,
-        RippleModule
+        RippleModule,
+        MessagesModule
     ],
     declarations: [LoginComponent]
 })

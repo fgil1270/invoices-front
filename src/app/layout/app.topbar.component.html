@@ -13,7 +13,7 @@
         >
             <i class="pi pi-bars"></i>
         </a>
-        <a class="layout-topbar-logo" routerLink="/">
+        <a class="layout-topbar-logo" routerLink="/dashboard">
             <img
                 [src]="'assets/layout/images/logo_sin_fondo-imagen.png'"
                 alt="poseidon-layout"
@@ -52,7 +52,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="py-3 px-4 flex gap-2 cursor-pointer">
+                <!-- <li class="py-3 px-4 flex gap-2 cursor-pointer">
                     <a>
                         <i class="pi pi-cog pi-star text-lg mr-3"></i>
                         <span class="font-semibold">Settings</span>
@@ -69,7 +69,7 @@
                         <i class="pi pi-compass pi-image text-lg mr-3"></i>
                         <span class="font-semibold">Support</span>
                     </a>
-                </li>
+                </li> -->
                 <li class="py-3 px-4 flex gap-2 cursor-pointer">
                     <a>
                         <i class="pi pi-power-off pi-image text-lg mr-3"></i>
@@ -445,12 +445,12 @@
                         [hideOnOutsideClick]="true"
                     >
                         <div class="flex gap-2">
-                           <!--  <img
+                            <!-- <img
                                 src="assets/layout/images/avatar-profile.png"
                                 alt="demo"
                             /> -->
                             <div class="flex flex-column">
-                                <span class="font-semibold">Peter Taylor</span>
+                                <span class="font-semibold">{{employeeName}}</span>
                                 <span class="text-sm">Webmaster</span>
                             </div>
                         </div>
@@ -467,7 +467,7 @@
                                         class="flex flex-column cursor-pointer"
                                     >
                                         <span class="font-semibold text-white"
-                                            >Peter Taylor</span
+                                            >{{employeeName}}</span
                                         >
                                         <span
                                             class="text-xs font-normal text-white"
@@ -476,7 +476,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="py-3 px-4 flex gap-2 cursor-pointer">
+                            <!-- <li class="py-3 px-4 flex gap-2 cursor-pointer">
                                 <a>
                                     <i class="pi pi-cog pi-star text-lg"></i>
                                     <span class="font-semibold mx-3"
@@ -501,15 +501,11 @@
                                         >Support</span
                                     >
                                 </a>
-                            </li>
+                            </li> -->
                             <li class="py-3 px-4 flex gap-2 cursor-pointer">
-                                <a>
-                                    <i
-                                        class="pi pi-power-off pi-image text-lg"
-                                    ></i>
-                                    <span class="font-semibold mx-3"
-                                        >Logout</span
-                                    >
+                                <a (click)="logout()">
+                                    <i class="pi pi-power-off pi-image text-lg"></i>
+                                    <span class="font-semibold mx-3">Logout</span>
                                 </a>
                             </li>
                         </ul>

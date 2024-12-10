@@ -1,0 +1,80 @@
+<p-toast />
+<p-dialog header="Foreign Invoice" [(visible)]="visible" [modal]="true" showEffect="fade" [style]="{width: '80vw', height: '50vw'}" 
+[breakpoints]="{'960px': '75vw'}" closeIcon="false" closeAriaLabel="false">
+  <div class="card p-fluid">
+    
+    <div class="p-formgrid grid">
+      <div class="field col">
+        <label htmlFor="name2">No. Invoice</label>
+        <input pInputText [(ngModel)]="noInvoice" type="text" />
+      </div>
+      <div class="field col">
+        <label for="calendar">Calendar</label>
+        <p-calendar
+            inputId="calendar"
+            [(ngModel)]="fecha"
+        ></p-calendar>
+      </div>
+    </div>
+    <div class="p-formgrid grid">
+      <div class="field col">
+        <label htmlFor="name2">OC</label>
+        <input pInputText [(ngModel)]="oc" type="text" />
+      </div>
+      <div class="field col">
+        <label htmlFor="email2">Reference No.</label>
+        <input pInputText [(ngModel)]="reference" type="text" />
+      </div>
+    </div>
+    <div class="p-formgrid grid">
+      <div class="field col">
+        <label htmlFor="name2">Supplier</label>
+        <p-dropdown
+            inputId="dropdown"
+            [autoDisplayFirst]="false"
+            [options]="suppliers"
+            [(ngModel)]="value2"
+            optionLabel="name"
+            [filter]="true"
+        ></p-dropdown>
+      </div>
+      <div class="field col">
+        <label htmlFor="email2">Currency</label>
+        <p-dropdown
+            inputId="dropdown"
+            [autoDisplayFirst]="false"
+            [options]="currency"
+            [(ngModel)]="value1"
+            optionLabel="name"
+            [showClear]="true"
+        ></p-dropdown>
+      </div>
+    </div>
+    <div class="p-formgrid grid">
+      <div class="field col">
+        <label htmlFor="name2">Tax</label>
+        <input pInputText [(ngModel)]="tax" type="number" />
+      </div>
+      <div class="field col">
+        <label htmlFor="email2">Amount</label>
+        <input pInputText [(ngModel)]="amount" type="number" />
+      </div>
+    </div>
+    <div class="p-formgrid grid">
+      <div class="field col">
+        <label htmlFor="name2">Attachment</label>
+        <p-fileUpload name="demo[]" accept=".pdf" [maxFileSize]="1000000" 
+        (onSelect)="onBasicUpload($event)" 
+        [auto]="true"
+        [showCancelButton]="true"
+        styleClass="w-auto p-2"></p-fileUpload>
+      </div>
+      
+    </div>
+  </div>
+  <ng-template pTemplate="footer">
+    
+    <button pButton icon="pi pi-check" (click)="save()" label="Save" class="p-button-outlined"></button>
+    <button pButton icon="pi pi-times" (click)="cancel()" label="Cancel" class="p-button-outlined"></button>
+  </ng-template>
+</p-dialog>
