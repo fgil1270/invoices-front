@@ -42,7 +42,7 @@ export class AppMenuComponent implements OnInit {
                             {
                                 label: 'Views-Roles',
                                 icon: 'pi pi-fw pi-share-alt',
-                                routerLink: ['/configuration/role'],
+                                routerLink: ['/view-role'],
                             },
                             {
                                 label: 'Users',

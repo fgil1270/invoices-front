@@ -41,6 +41,14 @@ const routes: Routes = [
                     ),
             },
             {
+                path: 'view-role',
+                data: { breadcrumb: 'Views-Roles' },
+                loadChildren: () =>
+                    import('./demo/components/view-role/view-role.module').then(
+                        (m) => m.ViewRoleModule
+                    ),
+            },
+            {
                 path: 'user',
                 data: { breadcrumb: 'Users' },
                 loadChildren: () =>

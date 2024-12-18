@@ -24,11 +24,13 @@ export class ViewService {
         headers: new HttpHeaders({ 'Content-Type': 'multipart/form-data' })
       };
 
-    //subi un archivo para crear empleados
+    //obtener todas las vistas
     getAllView(): Observable<any> {
         return this.http.get<any>(this.apiView, this.httpOptions);
         
-    } 
+    }
+
+    //obtener los roles de las vistas
 
     //subi un archivo para crear empleados
     postForeignInvocie(data: any, file: any): Observable<any> {
